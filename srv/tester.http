@@ -1,0 +1,68 @@
+###
+http://localhost:4004/odata/v4/CatalogService
+
+
+###
+http://localhost:4004/odata/v4/CatalogService/$metadata
+
+
+
+###
+POST http://localhost:4004/odata/v4/CatalogService/EmployeeService
+Content-Type: application/json
+
+
+    {
+      "ID": "02BD2137-0890-1EEA-A6C2-BB55C19788CC",
+      "accountNumber": "777888999",
+      "bankId": "510000111",
+      "bankName": "My Bank of Baroda",
+      "currency_code": "USD",
+      "email": "kl.rahul@itelo.info",
+      "gender": "M",
+      "language": "E",
+      "loginName": "KLRAHUL",
+      "nameFirst": "K L",
+      "nameInitials": null,
+      "nameLast": "Rahul",
+      "nameMiddle": null,
+      "phoneNumber": "+1 999 374 524",
+      "salary": "55500.00"
+    }
+
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeService/02BD2137-0890-1EEA-A6C2-BB55C19788CC
+
+
+###
+PATCH http://localhost:4004/odata/v4/CatalogService/EmployeeService/02BD2137-0890-1EEA-A6C2-BB55C19788CC
+Content-Type: application/json
+
+
+{
+    "currency_code": "USD",
+    "salary": "75000.00"
+}
+
+
+###
+DELETE http://localhost:4004/odata/v4/CatalogService/EmployeeService/02BD2137-0890-1EEA-A6C2-BB55C19788CC
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/getEmployeeInfo()
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/getEmployeeInfo()
+
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/PurchaseOrderS('74867AD200E41EDBA5D8B0C98DC28052')/largetOrder()
+
+
+###
+POST http://localhost:4004/odata/v4/CatalogService/PurchaseOrderS/74867AD200E41EDBA5D8B0C98DC28052/discountPrice
+Content-Type: application/json
+
+
+{}
