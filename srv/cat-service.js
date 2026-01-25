@@ -1,10 +1,10 @@
 module.exports = cds.service.impl( async function(){
     // Step -- 1 : Get the object from ODATA Entities
-    let { EmployeeService, PurchaseOrderS } = this.entities ;
+    let { EmployeeS, PurchaseOrderS } = this.entities ;
 
 
     // Step -- 2 : Define generic handler for the pre-checks
-    this.before('UPDATE', EmployeeService, (request, response) => {
+    this.before('UPDATE', EmployeeS, (request, response) => {
         console.log("Salary ",request.data.salary);
         if(parseFloat(request.data.salary) >= 50000){
             request.error(500,"Please get the apporval from your line manager");
@@ -17,7 +17,7 @@ module.exports = cds.service.impl( async function(){
             const transaction = cds.tx(request);
 
 
-            const reply = await transaction.read(EmployeeService).orderBy({
+            const reply = await transaction.read(EmployeeS).orderBy({
                 salary : 'desc'
             }).limit(10);
 
@@ -33,7 +33,7 @@ module.exports = cds.service.impl( async function(){
 
 
         let returndata = await cds.tx(request).run([
-            INSERT.into(EmployeeService).entries(dataset)
+            INSERT.into(EmployeeS).entries(dataset)
         ]).then((resolve, reject)=>{
             if (typeof(resolve) !== undefined) {
                 return request.data;

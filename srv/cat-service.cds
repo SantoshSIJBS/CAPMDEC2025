@@ -4,7 +4,7 @@ using { poapp.db as poapp  } from '../db/datamodels';
 service CatalogService @(path: 'CatalogService') {
 
 //  Service definitions for master data
-    entity EmployeeService as projection on poapp.master.employees ;
+    entity EmployeeS as projection on poapp.master.employees ;
 
 
     entity ProductService as projection on poapp.master.product ;
@@ -81,6 +81,6 @@ service CatalogService @(path: 'CatalogService') {
         nameMiddle : String,
         salary : Decimal(10,2),
         nameInitials : String
-    ) returns array of EmployeeService;
+    ) returns array of EmployeeS;
 
 }
