@@ -7,12 +7,13 @@
         {
             "source" : "^/poapp/webapp/(.*)",
             "target" : "$1",
-            "authenticationMethod" : "xsuaa"
+            "localDir" : "poapp/webapp/",
+            "authenticationType" : "xsuaa"
         },
         {
             "source" : "^/(.*)$",
-            "target" : "srv-api",
-            "authenticationMethod" : "xsuaa"
+            "destination" : "srv-api",
+            "authenticationType" : "xsuaa"
         }
     ]
 }
