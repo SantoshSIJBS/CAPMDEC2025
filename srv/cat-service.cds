@@ -1,7 +1,7 @@
 using { poapp.db as poapp  } from '../db/datamodels';
 
 
-service CatalogService @(path: 'CatalogService') {
+service CatalogService @(path: 'CatalogService', require: 'authenticated-user') {
 
 //  Service definitions for master data
     entity EmployeeS as projection on poapp.master.employees ;
